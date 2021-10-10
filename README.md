@@ -3,6 +3,8 @@ This is a repo for a CTF challenge. Do not reuse.
 
 Generates unique four word passwords in SSL Django.
 
+TODO: Update to autogenerate certs
+
 Run the docker file as follows
 
 docker pull rblm/ctf-ssl:1.0
