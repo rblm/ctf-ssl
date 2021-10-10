@@ -12,3 +12,4 @@ RUN chmod +x /opt/app/requirements.txt
 RUN pip install -r requirements.txt
 # copy project
 COPY . /opt/app/
+CMD python manage.py runserver_plus --cert-file cert/server.cert --key-file cert/server.key 0.0.0.0:8000

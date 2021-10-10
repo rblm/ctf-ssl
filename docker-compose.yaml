@@ -5,7 +5,7 @@ services:
     build:
          context: ./app 
          dockerfile: Dockerfile
-    command: python manage.py runserver_plus --cert-file cert/server.cert --key-file cert/server.key 0.0.0.0:8000
+    #command: "python manage.py runserver_plus --cert-file cert/server.cert --key-file cert/server.key 0.0.0.0:8000"
     volumes:
       - ./app/:/opt/app/
     ports:
