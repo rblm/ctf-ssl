@@ -10,6 +10,9 @@ RUN pip install --upgrade pip
 COPY ./requirements.txt /opt/app/requirements.txt 
 RUN chmod +x /opt/app/requirements.txt
 RUN pip install -r requirements.txt
+# install nginx
+RUN apt-get -y update && apt-get -y install nginx
+COPY ./config/nginx/nginx.conf /etc/nginx/nginx.conf.new
 # copy project
 COPY . /opt/app/
-CMD python manage.py runserver_plus --cert-file cert/server.cert --key-file cert/server.key 0.0.0.0:8000
+CMD /opt/app/scripts/run_server.sh
